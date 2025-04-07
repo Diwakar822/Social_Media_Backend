@@ -1,16 +1,18 @@
-Social Media Feed Backend
+##  Social Media Feed Backend
+
 This is the backend for a Social Media Feed application.
 It provides APIs for user registration, login, creating posts, liking posts, and adding comments.
 The backend is built using Node.js, Express.js, and MySQL.
 
-Features
->> User Authentication:
+---
+## Features
+1. User Authentication:
 
 Register new users.
 
 Login with username and password.
 
->> Posts:
+2. Posts:
 
 Create new posts with text and optional images.
 
@@ -18,20 +20,21 @@ Fetch all posts in a feed.
 
 Like/unlike posts.
 
->> Comments:
+3. Comments:
 
 Add comments to posts.
 
 Fetch comments for a specific post.
 
->> Database:
+4. Database:
 
 Persistent storage using MySQL.
 
 Tables for users, posts, and comments.
 
+---
 
->> Technologies Used
+## Technologies Used
 
 1. Backend: Node.js, Express.js
 
@@ -49,7 +52,8 @@ Tables for users, posts, and comments.
 
 8. body-parser: Middleware to parse request bodies.
 
->> Setup Instructions
+---
+## Setup Instructions
 
 1. Prerequisites
    
@@ -59,18 +63,20 @@ Tables for users, posts, and comments.
 
 >> Git: Install from git-scm.com.
 
->> created Database for this project:
+ ---
+## created Database for this project:
+
 CREATE DATABASE social_media;
 USE social_media;
 
-CREATE TABLE users (
+1. CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE posts (
+2. CREATE TABLE posts (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT,
     content TEXT,
@@ -80,7 +86,7 @@ CREATE TABLE posts (
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
-CREATE TABLE comments (
+3. CREATE TABLE comments (
     id INT AUTO_INCREMENT PRIMARY KEY,
     post_id INT,
     user_id INT,
